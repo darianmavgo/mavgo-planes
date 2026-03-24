@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GetaPlane – Aircraft Acquisition & Tax Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="topnav">
+  <div class="logo">✈ GetaPlane</div>
+  <div class="navlinks">
+    <a href="#aircraft">Aircraft</a>
+    <a href="#tax">Tax Strategy</a>
+    <a href="#license">Pilot License</a>
+    <a href="#airports">Airports</a>
+    <a href="#summary">Summary</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>6-Seat Aircraft Acquisition Plan</h1>
+  <p>Tax deduction strategy · Pilot license roadmap · Airport fee guide for Emory/Atlanta area & Topping, VA</p>
+  <div class="hero-badges">
+    <span class="badge">Updated March 2026</span>
+    <span class="badge green">100% Bonus Depreciation Eligible</span>
+    <span class="badge blue">Section 179 Up to $2.5M</span>
+  </div>
+</header>
+
+<main>
+
+<!-- AIRCRAFT OPTIONS -->
+<section id="aircraft" class="card">
+  <h2>🛩 Step 1 – Choose Your Aircraft</h2>
+  <p class="subtitle">6-seat piston aircraft suitable for carrying pilot + 5 passengers</p>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Aircraft</th><th>Seats</th><th>New Price</th><th>Used Price (Avg)</th><th>Range</th><th>Speed (kts)</th><th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td><strong>Cessna T206H Turbo Stationair</strong></td><td>6</td><td>~$750,000–$1.15M</td><td>~$450,000</td><td>800 nm</td><td>155</td><td>Most versatile; new &amp; used available</td>
+      </tr>
+      <tr>
+        <td>Piper PA-32 Cherokee Six</td><td>6</td><td>N/A (discontinued)</td><td>$84K–$309K</td><td>800 nm</td><td>148</td><td>Best value; production ended 1988</td>
+      </tr>
+      <tr>
+        <td>Beechcraft Bonanza A36</td><td>6</td><td>~$1.5M (new)</td><td>$200K–$635K</td><td>900 nm</td><td>176</td><td>Premium; fastest single-engine option</td>
+      </tr>
+      <tr>
+        <td>Piper Saratoga PA-32R</td><td>6</td><td>N/A (discontinued)</td><td>$150K–$400K</td><td>900 nm</td><td>160</td><td>Retractable gear; good balance</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout">
+    <strong>Recommended for full 1st-year deduction + 6 seats:</strong> A used Cessna T206H or Piper PA-32R in the $250K–$500K range maximizes Section 179 / bonus depreciation while keeping acquisition cost manageable.
+  </div>
+</section>
+
+<!-- TAX STRATEGY -->
+<section id="tax" class="card">
+  <h2>💰 Step 2 – First-Year Tax Deduction Strategy</h2>
+  <p class="subtitle">Use Section 179 + 100% Bonus Depreciation (reinstated 2025, now permanent)</p>
+
+  <div class="two-col">
+    <div class="info-box">
+      <h3>Section 179</h3>
+      <ul>
+        <li>2025 limit: <strong>$2,500,000</strong></li>
+        <li>Phase-out begins at $4,000,000 of assets placed in service</li>
+        <li>Deduction limited to <em>business taxable income</em></li>
+        <li>Aircraft must be used &gt;50% for business</li>
+        <li>Applies to new and used aircraft</li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h3>100% Bonus Depreciation</h3>
+      <ul>
+        <li>Reinstated permanently by the One Big Beautiful Bill Act (signed July 4, 2025)</li>
+        <li>Must be placed in service after Jan 19, 2025</li>
+        <li>Applies to aircraft new-to-you (new or used)</li>
+        <li>Can create a tax loss (unlike Sec 179)</li>
+        <li>Detailed flight logs required</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:1.5rem">Tax Deduction Calculator</h3>
+  <div class="calc-row">
+    <label>Aircraft Purchase Price: $</label>
+    <input type="number" id="purchasePrice" value="450000" oninput="calcTax()">
+  </div>
+  <div class="calc-row">
+    <label>Your Marginal Tax Rate (%): </label>
+    <input type="number" id="taxRate" value="37" min="10" max="50" oninput="calcTax()">
+  </div>
+  <div class="calc-row">
+    <label>Business Use (%): </label>
+    <input type="number" id="bizUse" value="80" min="51" max="100" oninput="calcTax()">
+  </div>
+
+  <div class="result-box" id="taxResult"></div>
+
+  <div class="requirements">
+    <h3>⚠️ IRS Requirements to Qualify</h3>
+    <ul>
+      <li>Aircraft placed in service after Jan 19, 2025</li>
+      <li><strong>&gt;50% business use</strong> required (documented with detailed flight logs)</li>
+      <li>If business use falls below 50%, recapture rules apply</li>
+      <li>Flights must have a legitimate business purpose</li>
+      <li>Consult a qualified aviation tax attorney (e.g., AOPA Tax Advisors)</li>
+    </ul>
+  </div>
+
+  <div class="table-wrap" style="margin-top:1.5rem">
+  <table>
+    <thead><tr><th>Scenario</th><th>Aircraft Cost</th><th>Business Use</th><th>Deductible Amount</th><th>Tax Saved @ 37%</th></tr></thead>
+    <tbody>
+      <tr><td>Budget Buy</td><td>$250,000</td><td>80%</td><td>$200,000</td><td><strong>$74,000</strong></td></tr>
+      <tr class="highlight"><td>Mid-Range (Recommended)</td><td>$450,000</td><td>80%</td><td>$360,000</td><td><strong>$133,200</strong></td></tr>
+      <tr><td>New Cessna T206H</td><td>$750,000</td><td>80%</td><td>$600,000</td><td><strong>$222,000</strong></td></tr>
+      <tr><td>Bonanza A36 New</td><td>$1,500,000</td><td>80%</td><td>$1,200,000</td><td><strong>$444,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- PILOT LICENSE -->
+<section id="license" class="card">
+  <h2>📋 Step 3 – Pilot Certificate Costs</h2>
+  <p class="subtitle">To legally fly 7 people or fewer (pilot + 5 pax) for non-commercial purposes, you need at minimum a <strong>Private Pilot Certificate (PPL)</strong>.</p>
+
+  <div class="two-col">
+    <div class="info-box">
+      <h3>Private Pilot Certificate (PPL) ✅ Required</h3>
+      <p>Allows you to fly the aircraft and carry passengers for non-commercial purposes.</p>
+      <ul>
+        <li>FAA minimum: 40 flight hours</li>
+        <li>Typical completion: 55–75 hours</li>
+        <li>Timeline: 6–18 months part-time</li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h3>Instrument Rating (IFR) 🎯 Recommended</h3>
+      <p>Allows flying in clouds and low visibility. Strongly recommended for cross-country flights between Atlanta and Topping, VA.</p>
+      <ul>
+        <li>Additional 40–50 hours of training</li>
+        <li>Essential for IFR flight plans</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:1.5rem">Private Pilot License – Full Cost Breakdown</h3>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Low Est.</th><th>Typical</th><th>High Est.</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Ground School</td><td>$350</td><td>$500</td><td>$1,200</td><td>Online or classroom</td></tr>
+      <tr><td>Study Materials / Books</td><td>$150</td><td>$300</td><td>$500</td><td>ASA or Jeppesen kits</td></tr>
+      <tr><td>Aircraft Rental – Training (55 hrs avg)</td><td>$6,600</td><td>$9,900</td><td>$16,500</td><td>$120–$300/hr depending on aircraft</td></tr>
+      <tr><td>Flight Instructor (55 hrs dual)</td><td>$2,750</td><td>$3,850</td><td>$5,500</td><td>$50–$100/hr</td></tr>
+      <tr><td>FAA Written Knowledge Test</td><td>$165</td><td>$175</td><td>$200</td><td>PSI testing center fee</td></tr>
+      <tr><td>FAA Checkride (Oral + Flight)</td><td>$650</td><td>$900</td><td>$1,500</td><td>DPE (Designated Pilot Examiner)</td></tr>
+      <tr><td>FAA 3rd-Class Medical Certificate</td><td>$100</td><td>$125</td><td>$200</td><td>AME (Aviation Medical Examiner)</td></tr>
+      <tr><td>Headset</td><td>$200</td><td>$500</td><td>$1,200</td><td>David Clark or Bose A20</td></tr>
+      <tr><td>Charts, Apps & Tablet (ForeFlight)</td><td>$100</td><td>$200</td><td>$400</td><td>ForeFlight ~$100–$200/yr</td></tr>
+      <tr class="total-row"><td><strong>TOTAL – PPL</strong></td><td><strong>$11,065</strong></td><td><strong>$16,450</strong></td><td><strong>$27,200</strong></td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 style="margin-top:1.5rem">Add-On: Instrument Rating (IFR)</h3>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Low Est.</th><th>Typical</th><th>High Est.</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>IFR Ground School / Study</td><td>$300</td><td>$500</td><td>$800</td></tr>
+      <tr><td>Sim / Hood Time (20 hrs)</td><td>$1,000</td><td>$1,600</td><td>$3,000</td></tr>
+      <tr><td>Aircraft Rental – IFR Training (40 hrs)</td><td>$4,800</td><td>$7,200</td><td>$12,000</td></tr>
+      <tr><td>Instructor Fees (40 hrs)</td><td>$2,000</td><td>$3,200</td><td>$4,000</td></tr>
+      <tr><td>IFR Written & Checkride</td><td>$800</td><td>$1,100</td><td>$1,500</td></tr>
+      <tr class="total-row"><td><strong>TOTAL – IFR Add-On</strong></td><td><strong>$8,900</strong></td><td><strong>$13,600</strong></td><td><strong>$21,300</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout green">
+    <strong>Combined PPL + IFR total: ~$25,000–$48,500</strong> — IFR training costs can also be deducted as a business expense if the aircraft is used for business travel.
+  </div>
+</section>
+
+<!-- AIRPORTS -->
+<section id="airports" class="card">
+  <h2>🏁 Step 4 – Airport Fees</h2>
+
+  <h3>Near Emory University – Atlanta, GA</h3>
+  <p class="subtitle">Closest airports to Emory University campus</p>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Airport</th><th>ICAO</th><th>Distance to Emory</th><th>Landing Fee</th><th>Overnight Tie-Down</th><th>Monthly Hangar (T-Hangar)</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td><strong>DeKalb-Peachtree Airport</strong></td><td>KPDK</td><td>~10.6 mi</td><td>Weight-based (starts Apr 2026): $4–$6/1,000 lb MTOW for transient</td><td>Call FBO</td><td>Call (new development underway)</td><td>Closest; best location</td>
+      </tr>
+      <tr>
+        <td>Fulton County Airport</td><td>KFTY</td><td>~14 mi</td><td>No landing fee (SE piston); $7 infra + $47 handling (waived w/10 gal)</td><td>$25 (SE piston)/night</td><td>~$60/night or call for monthly</td><td>Hill Aircraft FBO on-site</td>
+      </tr>
+      <tr>
+        <td>Gwinnett Co. / Briscoe Field</td><td>KLZU</td><td>~20 mi</td><td>Call FBO</td><td>Call FBO</td><td>$750+/mo (3,250 sq ft min)</td><td>Good facilities, further east</td>
+      </tr>
+      <tr>
+        <td>Atlanta Regional / Falcon Field</td><td>KFFC</td><td>~35 mi</td><td>Weight-based ramp fee</td><td>$74/mo (SE piston)</td><td>$505–$700/mo (T-hangar)</td><td>Further out; good fees</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 style="margin-top:2rem">Near Topping, Virginia</h3>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Airport</th><th>ICAO</th><th>Landing Fee</th><th>Tie-Down</th><th>Hangar</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td><strong>Middle Peninsula Regional</strong></td><td>KFYJ</td><td>Listed; call 804-785-9725</td><td>Call FBO</td><td>Call FBO</td><td>Closest to Topping, VA; small rural airport</td>
+      </tr>
+      <tr>
+        <td>Hummel Field</td><td>W75</td><td>Call</td><td>Typical $10–$20/night</td><td>Limited</td><td>Private; very small grass strip near Topping</td>
+      </tr>
+      <tr>
+        <td>Williamsburg Regional</td><td>KJGG</td><td>No fee (SE piston)</td><td>$10–$25/night</td><td>~$300–$500/mo</td><td>~40 mi from Topping; more services</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 style="margin-top:2rem">Typical Small Airport Fee Ranges (General Reference)</h3>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Fee Type</th><th>SE Piston (your aircraft)</th><th>Twin Piston</th><th>Turbo Prop</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Landing Fee (transient)</td><td>$0–$20</td><td>$20–$50</td><td>$50–$150</td></tr>
+      <tr><td>Overnight Tie-Down (ramp)</td><td>$10–$30/night</td><td>$25–$60/night</td><td>$50–$100/night</td></tr>
+      <tr><td>Overnight Hangar (transient)</td><td>$50–$100/night</td><td>$75–$150/night</td><td>$100–$300/night</td></tr>
+      <tr><td>Monthly T-Hangar (based acft)</td><td>$300–$750/mo</td><td>$500–$1,000/mo</td><td>$700–$1,500/mo</td></tr>
+      <tr><td>Fuel (100LL AvGas)</td><td>$6.00–$8.50/gal</td><td>Same</td><td>Jet-A $5.50–$7.00</td></tr>
+      <tr><td>Annual Inspection</td><td>$1,500–$3,500</td><td>$2,500–$5,000</td><td>$5,000–$15,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section id="summary" class="card">
+  <h2>📊 Total Cost Summary</h2>
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Low Estimate</th><th>Mid Estimate</th><th>High Estimate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Aircraft Purchase (used mid-range)</td><td>$200,000</td><td>$450,000</td><td>$750,000</td></tr>
+      <tr><td>Pre-Purchase Inspection</td><td>$1,500</td><td>$2,500</td><td>$5,000</td></tr>
+      <tr><td>Registration &amp; Title Transfer</td><td>$500</td><td>$750</td><td>$1,500</td></tr>
+      <tr><td>Initial Insurance (annual)</td><td>$3,000</td><td>$5,000</td><td>$10,000</td></tr>
+      <tr><td>Private Pilot Certificate (PPL)</td><td>$11,000</td><td>$16,500</td><td>$27,200</td></tr>
+      <tr><td>Instrument Rating (IFR) – recommended</td><td>$8,900</td><td>$13,600</td><td>$21,300</td></tr>
+      <tr><td>Avionics Upgrade (GPS/ADS-B)</td><td>$3,000</td><td>$8,000</td><td>$25,000</td></tr>
+      <tr><td>Annual Hangar (home airport)</td><td>$4,800</td><td>$7,200</td><td>$12,000</td></tr>
+      <tr><td>Annual Operating Costs (fuel 100 hrs)</td><td>$7,000</td><td>$10,000</td><td>$15,000</td></tr>
+      <tr><td>Annual Maintenance &amp; Reserve</td><td>$3,000</td><td>$6,000</td><td>$12,000</td></tr>
+      <tr class="total-row"><td><strong>TOTAL Year-1 All-In</strong></td><td><strong>$242,700</strong></td><td><strong>$519,550</strong></td><td><strong>$878,000</strong></td></tr>
+      <tr class="tax-row"><td><strong>Est. Tax Deduction (Yr 1 @ 80% biz use)</strong></td><td><strong>($59,200)</strong></td><td><strong>($133,200)</strong></td><td><strong>($222,000)</strong></td></tr>
+      <tr class="net-row"><td><strong>Net After-Tax Cost (Year 1)</strong></td><td><strong>$183,500</strong></td><td><strong>$386,350</strong></td><td><strong>$656,000</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h4>Consult Aviation Tax Attorney</h4>
+      <p>Engage an aviation tax specialist before purchase. Document business purpose, set up an LLC if needed, and plan flight logs.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h4>Start Pilot Training</h4>
+      <p>Begin PPL training at FTY or PDK (Atlanta) while aircraft is being acquired. Target IFR rating within 12 months.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h4>Pre-Purchase Inspection</h4>
+      <p>Hire an independent A&amp;P mechanic (not the seller's) to inspect before buying. Budget $1,500–$5,000.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <h4>Place in Service &amp; Document</h4>
+      <p>Ensure the aircraft is placed in service (business-ready) in the current tax year. Keep meticulous flight logs from Day 1.</p>
+    </div>
+  </div>
+
+  <div class="callout disclaimer">
+    <strong>⚖️ Disclaimer:</strong> This plan is informational only. Tax law is complex and individual circumstances vary. Always consult a licensed CPA and aviation tax attorney before making purchase or deduction decisions. IRS scrutiny of aircraft deductions is significant.
+  </div>
+</section>
+
+</main>
+<footer>
+  <p>GetaPlane Plan · Generated March 2026 · For informational purposes only</p>
+</footer>
+
+<script>
+function calcTax() {
+  const price = parseFloat(document.getElementById('purchasePrice').value) || 0;
+  const rate = parseFloat(document.getElementById('taxRate').value) || 37;
+  const biz = parseFloat(document.getElementById('bizUse').value) || 80;
+  const deductible = price * (biz / 100);
+  const taxSaved = deductible * (rate / 100);
+  const netCost = price - taxSaved;
+  document.getElementById('taxResult').innerHTML = `
+    <div class="result-grid">
+      <div><span class="label">Purchase Price</span><span class="val">$${price.toLocaleString()}</span></div>
+      <div><span class="label">Deductible Amount (${biz}% biz use)</span><span class="val green">$${deductible.toLocaleString()}</span></div>
+      <div><span class="label">Tax Savings @ ${rate}%</span><span class="val green">$${taxSaved.toLocaleString(undefined,{maximumFractionDigits:0})}</span></div>
+      <div><span class="label">Effective Net Cost After Deduction</span><span class="val blue">$${netCost.toLocaleString(undefined,{maximumFractionDigits:0})}</span></div>
+    </div>
+  `;
+}
+window.onload = calcTax;
+</script>
+</body>
+</html>
