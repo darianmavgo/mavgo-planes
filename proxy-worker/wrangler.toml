@@ -1,0 +1,7 @@
+name = "mavgo-planes-proxy"
+main = "index.js"
+compatibility_date = "2024-03-24"
+
+[[routes]]
+pattern = "mavgo.com/planes*"
+zone_name = "mavgo.com"
