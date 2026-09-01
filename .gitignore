@@ -1,2 +1,3 @@
 proxy-worker/node_modules/
 .wrangler/
+MavgoSecrets.yaml
